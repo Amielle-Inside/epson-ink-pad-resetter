@@ -199,4 +199,4 @@ if __name__ == '__main__':
     print("\n💡 Ctrl+C para parar o servidor\n")
     print("="*60 + "\n")
     
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    app.run(debug=True, host=os.environ.get('FLASK_HOST', '0.0.0.0'), port=int(os.environ.get('FLASK_PORT', '5000')))
